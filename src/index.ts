@@ -32,7 +32,25 @@ while (head) {
 }
 
 
-console.log(stack);
-console.log(stack.pop());
-console.log(stack.pop());
+
+// Circular Linked List
+const cll = new CircularLinkedList<number>();
+cll.append(1);
+cll.append(2);
+cll.append(3);
+cll.append(4);
+cll.append(5);
+cll.insert(6, 1, true);
+cll.insert(7, 1, false);
+cll.insert(8, 1, true);
+cll.insert(9, 8, true);
+cll.insert(10, 8, false);
+cll.append(11);
+cll.append(12);
+console.log(cll.toString())
+// console.log(cll);
+
+
+
+
 

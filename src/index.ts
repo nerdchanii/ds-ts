@@ -2,6 +2,7 @@ import Queue from "./queue/list";
 import Stack from './stack/list';
 import LinkedList from './linkedList/index';
 import CircularLinkedList from "./linkedList/circularLinkedList/index";
+import DoublyLinkedList from "./linkedList/doublyLinkedList/index";
 // queue
 const queue = new Queue();
 queue.enqueue(1);
@@ -52,5 +53,29 @@ console.log(cll.toString())
 
 
 
+const dbl = new DoublyLinkedList<number>();
+dbl.add(1);
+dbl.add(2);
+dbl.add(3);
+dbl.delete(3);
+dbl.add(4);
+dbl.add(5);
+dbl.delete(5);
+dbl.add(6);
+dbl.add(7);
+dbl.insert(8, 1, true);
+dbl.insert(10, 4, true);
+{
+  let head = dbl.find(8);
+  let visited = false;
+  while (head) {
+    if (head === dbl.head && visited) break;
+    if (!visited) visited = true;
+    console.log(head.data);
+    head = head.next;
+  }
+}
+console.log('head before link', dbl.head?.before?.data);
+console.log('tail after link', dbl.tail?.next?.data);
 
 
